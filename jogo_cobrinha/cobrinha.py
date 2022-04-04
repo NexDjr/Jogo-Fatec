@@ -51,15 +51,15 @@ def aumenta_cobra(lista_corpo_cobra):
         pygame.draw.rect(tela, (255,0,255),(XeY[0],XeY[1],15,15))
 
 def reiniciar_jogo():
-    global pontos, tamanho_cobra, posicao_em_y_do_retangulo, posicao_em_y_do_retangulo,lista_corpo_cobra, lista_cobra, posicao_em_y_do_circulo, posicao_em_x_do_circulo, morreu
+    global pontos, tamanho_cobra, posicao_em_x_do_retangulo, posicao_em_y_do_retangulo,lista_corpo_cobra, lista_cobra, posicao_em_y_do_circulo, posicao_em_x_do_circulo, morreu
     pontos = 0
     tamanho_cobra = 2
-    posicao_em_x_do_retangulo = 100
-    posicao_em_y_do_retangulo = 100
+    posicao_em_x_do_retangulo = int(largura/2)
+    posicao_em_y_do_retangulo = int(altura/2)
     lista_corpo_cobra =[]
     lista_cobra = []
     posicao_em_y_do_circulo = int(randint(20,480))
-    posicao_em_x_do_circulo = (20,500)
+    posicao_em_x_do_circulo = int(randint(20,500))
     morreu = False
 
 while True:
