@@ -6,7 +6,7 @@ import time
 from random import randint
 
 pygame.init()
-
+#Pedro é besta
 altura = 500
 largura = 550
 fonte = pygame.font.Font('PKMN RBYGSC.ttf', 20)
