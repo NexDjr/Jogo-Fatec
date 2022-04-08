@@ -106,7 +106,7 @@ while True:
 
     # Criação dos objetos
     circulo = pygame.draw.circle(
-        tela, (0, 0, 255), (posicao_em_x_do_circulo, posicao_em_y_do_circulo), (7))
+        tela, (0, 0, 255), (posicao_em_x_do_circulo, posicao_em_y_do_circulo), (7.5))
     retangulo = pygame.draw.rect(
         tela, (0, 255, 0), (posicao_em_x_do_retangulo, posicao_em_y_do_retangulo, 15, 15))
 
