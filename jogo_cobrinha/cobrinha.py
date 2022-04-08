@@ -155,7 +155,7 @@ while True:
             'Aperte R para reiniciar', True, (0, 0, 0))
         tela.fill((255, 0, 0))
         tela.blit(mensagem_morte, ((altura/4), (largura/3)))
-        tela.blit(mensagem_reiniciar, ((altura/4), (largura/2.5)))
+        tela.blit(mensagem_reiniciar, ((altura/4.5), (largura/2.25)))
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
