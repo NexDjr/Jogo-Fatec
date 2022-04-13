@@ -2,7 +2,6 @@ import pygame
 import pygame.freetype
 from pygame.locals import *
 from sys import exit
-import time
 from random import randint
 
 pygame.init()
@@ -10,7 +9,7 @@ pygame.init()
 # ss muito
 # kd o starwars ?
 altura = 500
-largura = 550
+largura = 560
 fonte = pygame.font.Font('PKMN RBYGSC.ttf', 20)
 fonte2 = pygame.font.Font('PKMN RBYGSC.ttf', 40)
 pontos = 0
@@ -19,11 +18,11 @@ lista_corpo_cobra = []
 morreu = False
 
 
-pygame.mixer.music.set_volume(0.22)
-musica_de_fundo = pygame.mixer.music.load('BoxCat Games - Passing Time.mp3')
-pygame.mixer.music.play(-1)
+#pygame.mixer.music.set_volume(0.22)
+#musica_de_fundo = pygame.mixer.music.load('BoxCat Games - Passing Time.mp3')
+#pygame.mixer.music.play(-1)
 
-som_de_colisao = pygame.mixer.Sound('smw_1-up.wav')
+#som_de_colisao = pygame.mixer.Sound('smw_1-up.wav')
 
 # para a posição inicial do circulo ser o meio da tela
 posicao_em_x_do_circulo = randint(20, altura - 20)
@@ -58,8 +57,8 @@ def reiniciar_jogo():
     posicao_em_y_do_retangulo = int(altura/2)
     lista_corpo_cobra = []
     lista_cobra = []
-    posicao_em_y_do_circulo = int(randint(20, 480))
-    posicao_em_x_do_circulo = int(randint(20, 500))
+    posicao_em_y_do_circulo = int(randint(20, 400))
+    posicao_em_x_do_circulo = int(randint(20, 480))
     morreu = False
 
 
@@ -68,7 +67,6 @@ while True:
     clock.tick(25)
     mensagem = f'Pontos:  {pontos}'
     texto_formatado = fonte.render(mensagem, True, (255, 255, 255))
-
     # Trecho de código que faz o programa parar quando a janela é fechada
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -105,16 +103,14 @@ while True:
     posicao_em_y_do_retangulo += y_controle
 
     # Criação dos objetos
-    circulo = pygame.draw.circle(
-        tela, (0, 0, 255), (posicao_em_x_do_circulo, posicao_em_y_do_circulo), (7.5))
-    retangulo = pygame.draw.rect(
-        tela, (0, 255, 0), (posicao_em_x_do_retangulo, posicao_em_y_do_retangulo, 15, 15))
+    circulo = pygame.draw.circle(tela, (0, 0, 255), (posicao_em_x_do_circulo, posicao_em_y_do_circulo), (7.5))
+    retangulo = pygame.draw.rect(tela, (0, 255, 0), (posicao_em_x_do_retangulo, posicao_em_y_do_retangulo, 14, 14))
 
     if retangulo.colliderect(circulo):
         posicao_em_x_do_circulo = int(randint(20, 500))
         posicao_em_y_do_circulo = int(randint(20, 480))
         pontos += 1
-        som_de_colisao.play()
+        #som_de_colisao.play()
         tamanho_cobra += 1
 
     lista_cobra = []
